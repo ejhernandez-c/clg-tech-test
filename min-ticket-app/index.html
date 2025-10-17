@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniTickets</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>MiniTickets</h1>
+
+    <section class="controls">
+      <label>
+        Status:
+        <select id="statusFilter">
+          <option value="ALL">All</option>
+          <option value="OPEN">Open</option>
+          <option value="CLOSED">Closed</option>
+        </select>
+      </label>
+
+      <label>
+        Search title:
+        <input id="searchInput" type="search" placeholder="Search by title..." />
+      </label>
+
+      <button id="clearBtn">Clear</button>
+    </section>
+
+    <p id="countText" class="count"></p>
+
+    <section id="listContainer" class="list"></section>
+
+    <template id="ticketTemplate">
+      <article class="ticket">
+        <header>
+          <h2 class="ticket-title"></h2>
+          <div class="meta">
+            <span class="id"></span>
+            <span class="status"></span>
+            <span class="priority"></span>
+          </div>
+        </header>
+        <div class="body">
+          <p class="assignee"></p>
+          <p class="createdAt"></p>
+          <p class="additional_info"></p>
+        </div>
+      </article>
+    </template>
+
+    <p id="emptyState" class="empty" hidden>No tickets match your filters.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

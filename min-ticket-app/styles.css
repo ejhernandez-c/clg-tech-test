@@ -1,0 +1,23 @@
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --danger:#ef4444;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111;padding:24px}
+.container{max-width:900px;margin:0 auto}
+h1{margin:0 0 12px}
+.controls{display:flex;gap:12px;align-items:center;margin:12px 0 18px}
+.controls label{display:flex;gap:6px;align-items:center}
+.count{color:var(--muted);margin:4px 0 12px}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ticket{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.ticket h2{margin:0 0 8px;font-size:16px}
+.meta{display:flex;gap:8px;font-size:12px;color:var(--muted)}
+.status{font-weight:600}
+.priority{font-weight:700}
+.empty{color:var(--muted);padding:18px;background:transparent}
+#clearBtn{padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:white;cursor:pointer}
