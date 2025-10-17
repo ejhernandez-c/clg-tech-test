@@ -40,6 +40,7 @@ def top_customers():
       o.status ='PAID'
     AND o.created_at >= NOW() - INTERVAL 30 DAY
     GROUP BY o.customer_id,c.name 
+     ORDER BY total_spend DESC
     LIMIT 5;
     """
     conn = get_connection()
