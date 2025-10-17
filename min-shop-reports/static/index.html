@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniShop Reports</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📊 MiniShop Reports</h1>
+
+    <section>
+      <h2>Top Customers (Last 30 Days)</h2>
+      <table id="customersTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Total Orders</th>
+            <th>Total Spend ($)</th>
+            <th>Avg Order Value ($)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Top Products (Last 60 Days)</h2>
+      <table id="productsTable">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Total Units</th>
+            <th>Total Revenue ($)</th>
+            <th>Unique Customers</th>
+            <th>Avg Order Value ($)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
