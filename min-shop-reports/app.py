@@ -52,14 +52,15 @@ def top_customers():
 @app.route('/reports/top-products')
 def top_products():
     sql = """
-    SELECT
+  SELECT
       oi.product_sku,
       SUM(oi.quantity) AS total_units_sold,
       ROUND(SUM(oi.quantity * oi.unit_price), 2) AS total_revenue,
       COUNT(DISTINCT o.customer_id) AS unique_customers,
       ROUND(SUM(oi.quantity * oi.unit_price) / COUNT(DISTINCT oi.order_id), 2) AS avg_order_value_per_product
-    FROM order_items oi
-    JOIN orders o ON o.id = oi.order_id
+    FROM clgdb.orders o
+      INNER JOIN clgdb.order_items oi 
+    	ON o.id = oi.order_id
     WHERE o.status = 'PAID'
       AND o.created_at >= NOW() - INTERVAL 60 DAY
     GROUP BY oi.product_sku
